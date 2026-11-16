@@ -115,6 +115,23 @@ class HomePage extends StatelessWidget {
           ),
         ],
       ),
+
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: 0,
+        selectedItemColor: orange,
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.restaurant),
+            label: 'Restoran',
+          ),
+          BottomNavigationBarItem(icon: Icon(Icons.favorite), label: 'Favorit'),
+        ],
+        onTap: (index) {
+          if (index == 1) {
+            Get.to(() => const FavoritePage());
+          }
+        },
+      ),
     );
   }
 }
